@@ -1,0 +1,389 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar styles */
+.navbar {
+  height: 77px; /* Adjust this value to make the banner thinner or thicker */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url('rednavban.jpg');
+  background-size: cover; /* Adjust the image size to cover the banner */
+  background-position: center;
+  margin-top: 8px;
+}
+
+.navbar-logo {
+  margin-left: 150px; /* Adjusted to position the logo */
+}
+
+.navbar-logo img {
+  height: 75px; /* Increase the height to make the logo bigger */
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  margin-left: 80px;
+  padding: 0;
+}
+
+.navbar-menu li {
+  position: relative;
+  margin-left: 20px;
+  padding-left: 20px; /* Space between the line and the text */
+}
+
+.navbar-menu li::before {
+  content: '';
+  position: absolute;
+  left: 0; /* Position line to the left of the text */
+  top: 50%;
+  width: 1px; /* Thinner line width */
+  height: 20px; /* Height of the line */
+  background-color: white; /* Color of the line */
+  transform: translateY(-50%); /* Center the line vertically */
+}
+
+.navbar-menu li:first-child::before {
+  content: none; /* Remove the line for the first item ("Exploits") */
+}
+
+.navbar-menu li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transition for color, transform, and shadow */
+}
+
+.navbar-menu li a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+
+.navbar-menu li a:hover::before {
+  transform: translateX(0);
+}
+
+.navbar-menu li a:hover {
+  color: #000000; /* Change text color on hover */
+  transform: scale(1.1); /* Slightly enlarge the text on hover */
+}
+
+.navbar-menu li a:active {
+  color: #ffffff; /* Change text color on click */
+  transform: scale(0.95); /* Slightly shrink the text on click */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow effect to simulate a press */
+}
+
+.navbar-discord {
+  margin-left: auto; /* Aligns the Discord logo to the right */
+  margin-right: 20px; /* Adds spacing from the right edge */
+  display: flex;
+  align-items: center;
+}
+
+.navbar-discord a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-discord img {
+  height: 40px; /* Adjust this value based on the size of your logo */
+  transition: transform 0.3s, filter 0.3s; /* Smooth transition for hover effects */
+  margin-right: 10px; /* Spacing between the logo and the text */
+}
+
+.navbar-discord img:hover {
+  transform: scale(1.1); /* Slightly enlarge the logo on hover */
+  filter: brightness(1.2); /* Make the logo slightly brighter on hover */
+}
+
+.discord-text {
+  font-size: 14px; /* Adjust the font size as needed */
+  font-weight: bold;
+  transition: transform 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.navbar-discord a:hover .discord-text {
+  transform: scale(1.1); /* Slightly enlarge the text on hover */
+  color: #000000; /* Change text color on hover */
+}
+
+/* Main content styles */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-content {
+  max-width: 60%;
+}
+
+.right-content {
+  max-width: 35%;
+}
+
+.main-title,
+.right-title {
+  color: red;
+  font-size: 2.5em; /* Largest font size */
+  margin-bottom: 10px;
+}
+
+.sub-title,
+.right-sub-title {
+  color: grey;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.description,
+.right-description {
+  color: black;
+  font-size: 1em;
+}
+
+/* Cards section styles */
+.cards-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  width: 300px; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
+  margin: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.card-link {
+  display: block;
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit text color from parent */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Lift the card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover .card-info {
+  opacity: 1; /* Show text on hover */
+}
+
+.bottom-navbar {
+  position: absolute;
+  bottom: -175px;
+  top: 850x;
+  left: 0;
+  width: 100%;
+  height: 50px; /* Adjust based on the height of your image */
+  background-color: #000; /* Fallback color */
+}
+
+.bottom-navbar img {
+  width: 100%;
+  height: 77px;
+  display: block;
+}
+
+/* About Me and Socials Sections with New Font */
+.about-socials {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #2e2e2e; /* Dark grey background */
+  color: white;
+  margin-top: 119px;
+}
+
+.about-me {
+  max-width: 60%;
+  font-family: 'Poppins', sans-serif; /* Apply new font family */
+  margin-left: 120px; /* Move About Me section to the right */
+}
+
+.about-me h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.about-me p {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Poppins', sans-serif; /* Apply new font family */
+  margin-right: 300px; /* Move Socials section to the left */
+}
+
+.socials h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.socials a {
+  display: block;
+  margin-top: 10px;
+}
+
+.socials img {
+  width: 50px; /* Adjust as needed */
+  height: auto;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.socials img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Base style for the link */
+.zoom-link {
+  display: inline-block; /* Ensures transform works correctly */
+  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+  color: blue;
+}
+
+/* Zoom effect on hover */
+.zoom-link:hover {
+  transform: scale(1.1); /* Scale up the link to 120% of its original size */
+}
+
+.zoom-link:active {
+  color: red;
+}
+
+/* Black navbar at the bottom with scroll-to-top button */
+.scroll-navbar {
+  position: absolute;
+  bottom: -502px; /* Adjust this value to control the distance from the bottom */
+  left: 0;      /* Start from the left edge */
+  right: 0;     /* End at the right edge */
+  background-color: black;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+.scroll-button {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.scroll-button:hover {
+  background-color: darkred;
+  transform: scale(1.1);
+}
+
+.scroll-button:focus {
+  outline: none;
+}
+
+.scroll-icon {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+/* Styles for the progress bar */
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px; /* Thin bar height */
+  background: #676666; /* Light grey background */
+  z-index: 9999; /* Ensure it's above other content */
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px; /* Adjust the height as needed */
+  width: 0;
+  background: url('rednavban.jpg') no-repeat center center; /* Replace with your image path */
+  background-size: cover; /* Stretch the image to cover the progress bar */
+  z-index: 1000; /* Ensure it's on top */
+  transition: width 0.25s ease-in-out;
+}
+
+.background-section {
+  position: absolute;
+  top: 0; /* Position it at the top of the parent container */
+  left: 0; /* Position it at the left of the parent container */
+  width: 100%; /* Full width */
+  height: 300%; /* Full height */
+  height: 1230px;
+  background-image: url('red-wall-with-red-background-that-has-lot-spots-it_916191-333256.jpg'); /* Your background image */
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  z-index: -1; /* Ensure it's behind other content */
+}
